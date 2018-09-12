@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Predict how much your house is worth</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    {% if pred: %}
+         <p>Your house will probably be valued at: ${{pred}}</p>
+    {% endif %}
+
+    <div class="jumbotron text-center">
+      <h1>Predict how much your house is worth</h1>
+    </div>
+
+    <br><br>
+
+    <form action="/get-user-data" method="POST">
+        <input type="submit" value="get prediction">
+
+        <br><br>
+        <label for="total_sqft">total_sqft</label>
+        <input type="number" name="total_sqft" id="total_sqft" value="1000000">
+
+        <br><br>
+
+        <label for="bath">Number of bathrooms</label>
+        <input type="number" name="bath" id="bath" value="10">
+
+        <br><br>
+
+        <label for="balcony">Number of balcony</label>
+        <input type="number" name="balcony" id="balcony" value="10">
+
+        <br><br>
+
+
+
+        <label for="location">Place</label>
+        <select id="location" name="location">
+          <option value="Electronic City Phase II" selected="Electronic City Phase II">Electronic City Phase II</option>
+          <option value="Chikka Tirupathi">Chikka Tirupathi</option>
+          <option value="Uttarahalli">Uttarahalli</option>
+          <option value="Lingadheeranahalli">Lingadheeranahalli</option>
+          <option value="Kothanur">Kothanur</option>
+          <option value="Whitefield">Whitefield</option>
+          <option value="Marathahalli">Marathahalli</option>
+          <option value="7th Phase JP Nagar">7th Phase JP Nagar</option>
+          <option value="Gottigere">Gottigere</option>
+          <option value="Sarjapur">Sarjapur</option>
+          <option value="Mysore Road">Mysore Road</option>
+          <option value="Bisuvanahalli">Bisuvanahalli</option>
+          <option value="Raja Rajeshwari Nagar">Raja Rajeshwari Nagar</option>
+          <option value="Ramakrishnappa Layout">Ramakrishnappa Layout</option>
+          <option value="Manayata Tech Park">Manayata Tech Park</option>
+          <option value="Kengeri">Kengeri</option>
+          <option value="Binny Pete">Binny Pete</option>
+          <option value="Thanisandra">Thanisandra</option>
+          <option value="Bellandur">Bellandur</option>
+          <option value="Mangammanapalya">Mangammanapalya</option>
+          <option value="Electronic City">Electronic City</option>
+          <option value="Ramagondanahalli">Ramagondanahalli</option>
+          <option value="YelahankaYelahanka">Yelahanka</option>
+          <option value="Bisuvanahalli">Bisuvanahalli</option>
+          <option value="Hebbal">Hebbal</option>
+          <option value="Gubbalala">Gubbalala</option>
+          <option value="Mahadevpura">Mahadevpura</option>
+          <option value="Sarjapur Road">Sarjapur Road</option>
+          <option value="Weavers Colony">Weavers Colony</option>
+          <option value="Udayapur Village">Udayapur Village</option>
+          <option value="Sultan Palya">Sultan Palya</option>
+          <option value="Haralur Road">Haralur Road</option>
+          <option value="Cox Town">Cox Town</option>
+          <option value="Kenchenahalli">Kenchenahalli</option>
+          <option value="Hosakerehalli">Hosakerehalli</option>
+          <option value="Kothanur">Kothanur</option>
+          <option value=""></option>
+          <option value=""></option>
+
+          <option value="none">none</option>
+        </select>
+
+        <br> <br>
+        <label for="area_type">Area Type</label>
+        <select id="area_type" name="area_type">
+          <option value="Super built-up Area" selected="selected">Super built-up Area</option>
+          <option value="Plot Area">Plot Area</option>
+          <option value="Built-up AreaBuilt-up Area">Built-up Area</option>
+          <option value="none">none</option>
+        </select>
+
+        <br> <br>
+
+        <label for="size">Size</label>
+        <select id="size" name="size">
+          <option value="1 BHK">1 BHK</option>
+          <option value="2 BHK">2 BHK</option>
+          <option value="3 BHK" selected="3 BHK">3 BHK</option>
+          <option value="4 BHK">4 BHK</option>
+          <option value="1 Bedroom">1 Bedroom</option>
+          <option value="4 Bedroom">4 Bedroom</option>
+          <option value="5 Bedroom">5 Bedroom</option>
+          <option value="7 Bedroom">7 Bedroom</option>
+        </select>
+
+    </form>
+
+  </div>
+</body>
+
+</html>
